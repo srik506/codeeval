@@ -1,0 +1,15 @@
+import sys
+
+def process(a):
+	dic={}
+	with open(a) as hand:
+		x=hand.readlines()
+		for i in range(1,x.index(x[-1])+1):
+			dic[len(str(x[i]))]=i
+	for i in range(0,int(x[0])):
+		print x[dic.get(sorted(dic,reverse=True)[i])].strip()
+			
+
+if __name__ == '__main__':
+	a=sys.argv[1]
+	process(a)

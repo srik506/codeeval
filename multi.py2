@@ -1,0 +1,9 @@
+import sys
+
+if __name__ == '__main__':
+	for i in open(sys.argv[1]):
+		j=int(i.split(',')[0])
+		k=int(i.split(',')[1])
+		while k<j:
+			k+=int(i.split(',')[1])
+		print k

@@ -1,0 +1,26 @@
+import sys
+
+def sum(lis,pos):
+	if int(lis[pos]) > int(lis[pos+1]):
+		a,b=lis[pos],pos
+	else:
+		a,b=lis[pos+1],pos+1
+	return a,b
+
+if __name__=='__main__':
+	max,j=0,0
+	try:
+		for i in open(sys.argv[1]):
+			lis=i.split()
+			if len(lis)!=1:
+				a,b=sum(lis,j)
+				max+=int(a)
+				j=int(b)
+				print a
+			else:
+				max+=int(lis[0])
+				print int(lis[0])
+	except IOError:
+		print "File doesnt exist"
+	else:
+		print max

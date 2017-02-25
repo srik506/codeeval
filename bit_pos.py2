@@ -1,0 +1,17 @@
+import sys
+
+def binary(n,i,j):
+	i=n >> (i-1)
+	j=n >> (j-1)
+	if (i & 1) == (j & 1):
+		return True
+	else:
+		return False
+
+if __name__ == '__main__':
+	for i in open(sys.argv[1]):
+		n,i,j=i.strip().split(',')
+		if binary(int(n),int(i),int(j)):
+			print "true"
+		else:
+			print "false"

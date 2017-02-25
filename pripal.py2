@@ -1,0 +1,23 @@
+import sys,math
+
+def pri(i):
+	for j in range(2,int(math.sqrt(i))):
+		if i%j==0:
+			return False
+	else:
+		return True
+
+def pal(i):
+	for j in range(0,int(len(str(i))/2)):
+		if str(i)[j-1] != str(i)[-j]:
+			return False
+	else:
+		return True
+
+if __name__ == '__main__':
+	for i in range (1000,1,-1):
+		if pri(i):
+			if pal(i):
+				print i
+				break
+

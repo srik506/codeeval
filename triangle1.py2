@@ -1,0 +1,14 @@
+import sys
+
+if __name__=='__main__':
+	src=[]
+	high=0
+	for a in open(sys.argv[1]):
+		src.append(a.split())
+
+	for i in range(len(src)-1,-1,-1):
+		for j in range(len(src[i])-1):
+			high=max(int(src[i][j])+int(src[i-1][j]),int(src[i][j+1])+int(src[i-1][j]))
+			src[i-1][j]=high
+
+	print src[0][0]

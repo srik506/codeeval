@@ -1,0 +1,9 @@
+import sys
+
+def lower(a):
+	return a.lower()
+
+if __name__ == '__main__':
+	for i in open(sys.argv[1]):
+		a=lower(str(i.strip()))
+		print ''.join(a)

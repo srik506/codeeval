@@ -1,0 +1,22 @@
+import sys,math
+
+def pri(num,p):
+	s= int(math.sqrt(num))+1
+	for i in p:
+		if i > s: break
+		if num%i==0:
+			return False	
+	else:
+		return True
+
+if __name__ == '__main__':
+	sum,j,i=0,0,1
+	prime=[]
+	while j < 1000:
+		i+=1
+		if pri(i,prime):
+			j+=1
+			prime.append(i)
+			sum+=i
+			
+	print sum

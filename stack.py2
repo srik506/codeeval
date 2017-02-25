@@ -1,0 +1,22 @@
+import sys
+
+def push(line):
+	return line.split()
+
+def pop(lis):
+	list1=[]
+	lis.reverse()
+	for i in range(0,len(lis)):
+		if i%2==0:
+			list1.append(lis[i])
+	return list1
+
+if __name__ == '__main__':
+	try:
+		for i in open(sys.argv[1]):
+			lis_push=push(i)
+			lis_pop=pop(lis_push)
+			print ' '.join(lis_pop)
+	except Exception as ex:
+		print "The file name was not mentioned or not present"
+

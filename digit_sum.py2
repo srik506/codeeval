@@ -1,0 +1,15 @@
+import sys
+
+def sum(i):
+	j=0
+	while i > 9:
+		j+=i%10
+		i=i/10
+	else:
+		j+=i
+	print j
+
+if __name__ == '__main__':
+	for i in open(sys.argv[1]):
+		sum(int(i))
+		

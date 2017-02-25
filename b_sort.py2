@@ -1,0 +1,18 @@
+import sys
+
+def sort(lis):
+	for i in range(0,len(lis)-1):
+		if int(lis[i]) > int(lis[i+1]):
+			lis[i],lis[i+1]=lis[i+1],lis[i]
+	return lis
+
+if __name__ == '__main__':
+	try:
+		for i in open(sys.argv[1]):
+			stg=i.split('|')[0].split()
+			ctr=min(int(i.split('|')[1]),len(stg)**2)
+			for j in xrange(ctr):
+				stg=sort(stg)
+			print ' '.join(stg)
+	except IOError:
+		print "File doesnt not exist"
